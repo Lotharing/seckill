@@ -6,9 +6,10 @@ package edu.uestc.redis;
  */
 public abstract class BaseKeyPrefix implements KeyPrefix {
 
-    int expireSeconds;// 过期时间
-    String prefix;// 前缀
-
+    // 过期时间
+    int expireSeconds;
+    // 前缀
+    String prefix;
 
     /**
      * 默认过期时间为0，即不过期，过期时间只收到redis的缓存策略影响
@@ -26,7 +27,7 @@ public abstract class BaseKeyPrefix implements KeyPrefix {
     }
 
     /**
-     * 默认0代表永不过期
+     * 模版方法规范：返回过期时间-默认0代表永不过期
      *
      * @return
      */
@@ -36,7 +37,7 @@ public abstract class BaseKeyPrefix implements KeyPrefix {
     }
 
     /**
-     * 前缀为模板类的实现类的类名
+     * 模版方法规范：返回key 前缀 classSimpleName + prefix 前缀为模板类的实现类的类名
      *
      * @return
      */
